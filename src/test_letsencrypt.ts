@@ -17,7 +17,9 @@ try {
         email: "mymail@gmail.com",
 
         // When not in production, it doesn't check the server.
-        isProduction: false
+        isProduction: false,
+
+        timout_sec: 5
     });
 
     console.log("Certificate installed");
