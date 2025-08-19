@@ -2,30 +2,35 @@
   "name": "jopi-rewrite-test",
   "version": "1.0.0",
   "private": "true",
+
   "engines": {
     "bun": "^1.2.18",
     "node": ">=22.18.0"
   },
+
   "main": "src/index.ts",
   "type": "module",
+
   "scripts": {
-    "tsc": "tsc",
-    "bun-install": "bun install --registry http://localhost:4873/",
-    "bun-update": "bun update --registry http://localhost:4873/",
     "start-node": "node --import jopi-loader dist/tests.js",
+    "start-node-noloader": "node dist/tests.js",
     "start-bun": "bun --preload jopi-loader src/tests.ts"
   },
+
   "devDependencies": {
     "@types/bun": "^1.2.20",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "typescript": "^5.9.2",
-    "jopi-loader": "latest"
+
+    "jopi-loader": "workspace:*",
+    "jopi-node-space": "workspace:*"
   },
+
   "dependencies": {
     "axios": "^1.11.0",
-    "jopi-rewrite": "latest",
-    "jopi-rewrite-ui": "latest",
+    "jopi-rewrite": "workspace:*",
+    "jopi-rewrite-ui": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   }

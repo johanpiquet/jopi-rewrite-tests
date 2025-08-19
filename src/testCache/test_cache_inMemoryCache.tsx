@@ -1,4 +1,4 @@
-import {createServer} from "./createServer";
+import {createServer} from "../createServer.ts";
 import {getInMemoryCache} from "jopi-rewrite";
 
 const cache = getInMemoryCache();
@@ -9,6 +9,6 @@ await createServer(async req => {
 
     console.log("InMemoryCache - Not in cache:", req.url);
 
-    let res = await req.fetchServer("GET");
-    return req.addToCache_Compressed(res, {"my": "meta"});
+    let res = await req.fetchServer();
+    return req.addToCache_Compressed(res);
 }, cache);
