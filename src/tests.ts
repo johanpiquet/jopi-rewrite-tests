@@ -38,13 +38,13 @@
 //import "./test_startStopManager";
 //import "./test_fileServer"
 
-//import "./test_letsencrypt.ts";
+import "./test_letsencrypt.ts";
 
 //endregion
 
 //region Jopi Easy
 
 //import "./testJopiEasy/test_newWebSite.ts";
-import "./testJopiEasy/test_reverseProxy.ts";
+//import "./testJopiEasy/test_reverseProxy.ts";
 
 //endregion

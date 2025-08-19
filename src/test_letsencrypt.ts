@@ -5,14 +5,23 @@ const server = new JopiServer();
 const myHttpsWebSite = server.addWebsite(new WebSite("https://johan-piquet.fr"));
 
 // ACME challenge requires port 80 of the server.
-const myHttpWebSite = myHttpsWebSite.createHttpDirectWebsite();
+const myHttpWebSite = myHttpsWebSite.createHttpRedirectWebsite();
 server.addWebsite(myHttpWebSite);
 
 server.startServer();
 
-let certificate = await getLetsEncryptCertificate(myHttpWebSite, {
-    email: "my-mail@gmail.com",
-    isProduction: false
-});
+try {
+    let certificate = await getLetsEncryptCertificate(myHttpWebSite, {
+        log: true,
 
-console.log(certificate);
+        email: "mymail@gmail.com",
+
+        // When not in production, it doesn't check the server.
+        isProduction: false
+    });
+
+    console.log("Certificate installed");
+}
+catch (e) {
+    console.error("Can't install certificat", e);
+}
