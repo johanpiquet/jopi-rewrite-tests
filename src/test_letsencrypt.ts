@@ -1,9 +1,16 @@
 import {jopiEasy} from "jopi-rewrite";
 
-jopiEasy.new_webSite("https://johan-piquet.fr")
+jopiEasy.new_webSite("https://my-jopi-web-site.jopi")
     .add_httpCertificate().
         generate_letsEncryptCert("mymail@gmail.com")
         .disable_log()
-        .force_timout_sec(5)
-        .if_timeOutError(() => { console.log("Timed out !")})
+
+        // TODO: remettre à 30
+        .force_timout_sec(1)
+
+        .if_timeOutError(webSite => {
+                console.log("Timed out !")
+                webSite._onRebuildCertificate!();
+        })
+
         .done();
