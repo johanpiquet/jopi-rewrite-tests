@@ -1,9 +1,13 @@
 import {jopiEasy} from "jopi-rewrite";
 
-const webSite = jopiEasy.new_webSite("http://localhost:8080")
-    .add_fileServer("./www")
-    .get_webSite_instance();
+jopiEasy.new_webSite("https://127.0.0.1")
+    .add_httpCertificate().forLocalDev().done()
+    .add_fileServer("www").done().
 
-webSite.onGET("/version", req => {
-    return req.jsonResponse({version: "1.0.0"});
-});
+    hook_webSite(webSite => {
+        webSite.onGET("/version", req => {
+            return req.jsonResponse({version: "1.0.0"});
+        });
+    });
+
+

@@ -42,4 +42,9 @@
 
 //endregion
 
-import "./testJopiEasy/test_newWebSite.ts";
+//region Jopi Easy
+
+//import "./testJopiEasy/test_newWebSite.ts";
+import "./testJopiEasy/test_reverseProxy.ts";
+
+//endregion
