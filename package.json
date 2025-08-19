@@ -12,9 +12,8 @@
   "type": "module",
 
   "scripts": {
-    "start-node": "node --import jopi-loader dist/tests.js",
-    "start-node-noloader": "node dist/tests.js",
-    "start-bun": "bun --preload jopi-loader src/tests.ts"
+    "start-node": "npx jopi dist/tests.js",
+    "start-bun": "npx jopi src/tests.ts"
   },
 
   "devDependencies": {
