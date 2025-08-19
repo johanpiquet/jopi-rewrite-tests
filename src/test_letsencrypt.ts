@@ -1,16 +1,16 @@
 import {jopiEasy} from "jopi-rewrite";
 
+// To know:
+// - Certificat is automatically renewed (every 80 days).
+// - With bun.js, HTTPS certificates can be updated without restarting the server.
+// - Node.js doesn't support it :-(
+//
 jopiEasy.new_webSite("https://my-jopi-web-site.jopi")
     .add_httpCertificate().
         generate_letsEncryptCert("mymail@gmail.com")
         .disable_log()
 
-        // TODO: remettre à 30
-        .force_timout_sec(1)
-
-        .if_timeOutError(webSite => {
-                console.log("Timed out !")
-                webSite._onRebuildCertificate!();
-        })
+        .force_timout_sec(30)
+        .if_timeOutError(_webSite => { console.log("Timed out !") })
 
         .done();
