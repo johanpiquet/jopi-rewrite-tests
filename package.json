@@ -12,8 +12,8 @@
   "type": "module",
 
   "scripts": {
-    "start-node": "npx jopi dist/tests.js",
-    "start-bun": "npx jopi src/tests.ts"
+    "start-node": "jopin dist/tests.js",
+    "start-bun": "jopib src/tests.ts"
   },
 
   "devDependencies": {
