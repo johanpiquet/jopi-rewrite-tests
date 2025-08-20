@@ -44,7 +44,8 @@
 
 //region Jopi Easy
 
-import "./testJopiEasy/test_newWebSite.ts";
+//import "./testJopiEasy/test_fileServer.ts";
+import "./testJopiEasy/test_jwtAuth.ts";
 //import "./testJopiEasy/test_reverseProxy.ts";
 
 //endregion
