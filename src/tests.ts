@@ -9,9 +9,10 @@
 //region React
 
 //import "./testReact/test_react_hydrate.tsx";
-//import "./test_react_useJQuery.tsx";
-//import "./test_react_cssModule.tsx";
-import "./testReact/test_react_tailwind.tsx";
+//import "./testReact/test_react_useJQuery.tsx";
+//import "./testReact/test_react_cssModule.tsx";
+//import "./testReact/test_react_tailwind.tsx";
+import "./testReact/test_react_ssr.tsx";
 
 //endregion
 

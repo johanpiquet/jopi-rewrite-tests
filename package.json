@@ -25,6 +25,7 @@
     "@types/react-dom": "^19.1.7",
 
     "jopi-loader": "workspace:*",
+    "@jopi-loader/types": "workspace:*",
     "jopi-node-space": "workspace:*"
   },
 

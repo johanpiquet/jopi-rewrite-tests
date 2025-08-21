@@ -1,9 +1,7 @@
 import React from "react";
 import {mustHydrate, isServerSide} from "jopi-rewrite-ui";
 
-// Bun.js support SCSS and CSS natively.
-// Deno.js and Node.js don't support it.
-//import "./ComponentA.scss"; // bun.js ok
+import "./HydrateComponentA.scss";
 
 const Component = function({name}: {name: string}) {
     function doClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -20,4 +18,9 @@ const Component = function({name}: {name: string}) {
     </div>;
 };
 
+// Allow the magic comes from mustHydrate.
+// It creates an island inside the server side rendered HTML
+// where the HTML output of our React component is automatically
+// replaced by the full functional React component.
+//
 export default mustHydrate(import.meta, Component);

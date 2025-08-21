@@ -1,7 +1,7 @@
 import React from "react";
 import {mustHydrate, isServerSide} from "jopi-rewrite-ui";
 
-import "./ComponentA.scss";
+import "./HydrateComponentA.scss";
 
 const Component = function() {
     return <div
