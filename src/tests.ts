@@ -11,6 +11,7 @@
 //import "./testReact/test_react_hydrate.tsx";
 //import "./test_react_useJQuery.tsx";
 //import "./test_react_cssModule.tsx";
+import "./testReact/test_react_tailwind.tsx";
 
 //endregion
 
@@ -46,7 +47,7 @@
 
 //import "./testJopiEasy/testJopiEasy_fileServer.ts";
 //import "./testJopiEasy/testJopiEasy_jwtAuth.ts";
-import "./testJopiEasy/testJopiEasy_webSite.ts";
+//import "./testJopiEasy/testJopiEasy_webSite.ts";
 //import "./testJopiEasy/testJopiEasy_reverseProxy.ts";
 
 //endregion
