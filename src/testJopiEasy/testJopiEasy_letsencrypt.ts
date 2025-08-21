@@ -13,4 +13,4 @@ jopiEasy.new_webSite("https://my-jopi-web-site.jopi")
         .force_timout_sec(30)
         .if_timeOutError(_webSite => { console.log("Timed out !") })
 
-        .done();
+        .DONE_add_httpCertificate();

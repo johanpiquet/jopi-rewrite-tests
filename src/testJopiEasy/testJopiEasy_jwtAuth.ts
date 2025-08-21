@@ -1,10 +1,10 @@
-import {type AuthResult, jopiEasy} from "jopi-rewrite";
+import {jopiEasy} from "jopi-rewrite";
 import {UserStore_WithLoginPassword} from "jopi-rewrite/dist/userStores";
 
 let userStore: UserStore_WithLoginPassword;
 
 jopiEasy.new_webSite("https://127.0.0.1")
-    .add_httpCertificate().generate_localDevCert().done()
+    .add_httpCertificate().generate_localDevCert().DONE_add_httpCertificate()
 
     .add_jwtTokenAuth()
         .step_setPrivateKey("my key")
