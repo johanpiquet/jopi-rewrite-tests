@@ -9,7 +9,7 @@ server.startServer();
 //highlight-next-line
 myWebSite.setJwtSecret("my-secret-key");
 
-myWebSite.setJwtTokenStore((token, cookieValue, req, res) => {
+myWebSite.setJwtTokenStore((_token, cookieValue, req, res) => {
     req.addCookie(res, "authorization", cookieValue, {maxAge: NodeSpace.timer.ONE_DAY * 365})
 });
 

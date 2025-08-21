@@ -1,0 +1,15 @@
+import {type AuthResult, jopiEasy} from "jopi-rewrite";
+import {UserStore_WithLoginPassword} from "jopi-rewrite/dist/userStores";
+
+let userStore: UserStore_WithLoginPassword;
+
+jopiEasy.new_webSite("https://127.0.0.1")
+    .add_httpCertificate().generate_localDevCert().done()
+
+    .add_jwtTokenAuth()
+        .step_setPrivateKey("my key")
+        .step_setUserStore()
+            .use_customStore(_loginInfo => ({isOk: false, errorMessage: "Unknown user"}))
+            .DONE_use_customStore()
+        .stepOptional_setTokenStore().use_cookie()
+        .DONE_add_jwtTokenAuth();
