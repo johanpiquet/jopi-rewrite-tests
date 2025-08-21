@@ -35,13 +35,13 @@ myWebSite.onGET("/check-roles", req => {
     // an error NotAuthorizedException, which will
     // return a response with code 401.
     //
-    req.assertUserHasRoles("reader");
+    req.assertUserHasRoles(["reader"]);
 
-    if (req.userHasRoles("admin", "writer")) {
+    if (req.userHasRoles(["admin", "writer"])) {
         return req.htmlResponse("You are an admin with writer role!");
     }
 
-    if (req.userHasRoles("writer")) {
+    if (req.userHasRoles(["writer"])) {
         return req.htmlResponse("You have writer access!");
     }
 
