@@ -1,7 +1,7 @@
 import {isBrowserSide, mustHydrate} from "jopi-rewrite-ui";
 
 if (isBrowserSide()) {
-    const ws = new WebSocket('ws://127.0.0.1:3000/test');
+    const ws = NodeSpace.webSocket.openConnection('ws://127.0.0.1:3000/test');
 
     ws.onopen = () => {
         console.log('Connexion établie !');
