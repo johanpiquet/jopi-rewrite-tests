@@ -1,9 +1,6 @@
 import React from "react";
 import {mustHydrate, isServerSide} from "jopi-rewrite-ui";
 
-// With node.js, it requires doing "node --import jopi-loader".
-// With bun.js, it requires doing "bun --preload jopi-loader".
-//
 import styles from "./mybutton.module.scss";
 
 function Component({name}: {name: string}) {
@@ -21,7 +18,5 @@ function Component({name}: {name: string}) {
     </div>;
 }
 
-// Here we add "styles" which allow automatically exporting the CSS module if used.
+// Here we add "styles" which allow automatically inclide the CSS module in the page header as inline CSS.
 export default mustHydrate(import.meta, Component, styles);
-
-//export default Component;

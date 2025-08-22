@@ -12,7 +12,7 @@
 //import "./testReact/test_react_useJQuery.tsx";
 //import "./testReact/test_react_cssModule.tsx";
 //import "./testReact/test_react_tailwind.tsx";
-import "./testReact/test_react_ssr.tsx";
+//import "./testReact/test_react_ssr.tsx";
 
 //endregion
 
@@ -52,3 +52,5 @@ import "./testReact/test_react_ssr.tsx";
 //import "./testJopiEasy/testJopiEasy_reverseProxy.ts";
 
 //endregion
+
+import "./testWebSocket/index.tsx";
