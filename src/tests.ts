@@ -53,4 +53,4 @@
 
 //endregion
 
-import "./testWebSocket/index.tsx";
+import "./testJopiEasy/testJopiEasy_WebSocket.tsx";
