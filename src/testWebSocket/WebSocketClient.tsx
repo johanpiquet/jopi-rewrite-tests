@@ -1,16 +1,17 @@
 import {isBrowserSide, mustHydrate} from "jopi-rewrite-ui";
 
 if (isBrowserSide()) {
-    const ws = new WebSocket('ws://127.0.0.1:3000');
+    const ws = new WebSocket('ws://127.0.0.1:3000/test');
 
-    ws.onopen = (event) => {
+    ws.onopen = () => {
         console.log('Connexion établie !');
         // Envoyer un message au serveur
-        ws.send('Bonjour, serveur !');
+        console.log("Sending message to server")
+        ws.send('Hello from the browser!');
     };
 
     ws.onmessage = (event) => {
-        console.log('Message from serveur : ', event.data);
+        console.log('Received message from server : ', event.data);
     };
 
     ws.onerror = (event) => {
@@ -18,7 +19,7 @@ if (isBrowserSide()) {
     };
 
     ws.onclose = () => {
-        console.log('Connection close !');
+        console.log('Connection closed !');
     };
 }
 

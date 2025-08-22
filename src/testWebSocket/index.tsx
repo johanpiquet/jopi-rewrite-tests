@@ -6,10 +6,10 @@ jopiEasy.new_webSite("http://127.0.0.1:3000")
     .DONE_add_path()
 
     .hook_webSite(webSite => {
-        webSite.onWebSocketConnect(ws => {
+        webSite.onWebSocketConnect("/test", async (ws, infos) => {
             console.log("Connected to WebSocket Client !!!!!");
 
-            ws.onTextMessage(msg => {
+            ws.onMessage(msg => {
                 console.log("Message received: ", msg);
                 ws.sendTextMessage("ok");
             })
