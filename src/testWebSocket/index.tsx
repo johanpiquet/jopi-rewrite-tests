@@ -11,7 +11,7 @@ jopiEasy.new_webSite("http://127.0.0.1:3000")
 
             ws.onMessage(msg => {
                 console.log("Message received: ", msg);
-                ws.sendTextMessage("ok");
+                ws.sendMessage("ok");
             })
         })
     })
