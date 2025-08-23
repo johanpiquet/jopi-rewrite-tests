@@ -8,6 +8,9 @@ jopiApp.if_devMode(true /* <-- true allows setting dev mode from here */)
     // File watching is automatically enabled if dev mode.
     //.disable_restartServerOnSourceChange()
 
+    // Browser refresh is automatically enabled if dev mode.
+    //.disable_refreshBrowserOnSourceChange()
+
     // If using TypeScript compiler, then the source dir will be auto-detected.
     // Here it allows adding the workspace.
     //
