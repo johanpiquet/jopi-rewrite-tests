@@ -1,7 +1,7 @@
-import {buildSearchParamFilter, JopiServer, WebSite} from "jopi-rewrite";
+import {buildSearchParamFilter, JopiServer, newWebSite} from "jopi-rewrite";
 
 const server = new JopiServer();
-const myWebSite = server.addWebsite(new WebSite("http://127.0.0.1"));
+const myWebSite = server.addWebsite(newWebSite("http://127.0.0.1"));
 server.startServer();
 
 // Will filter our home page params.
@@ -21,14 +21,14 @@ const searchFilter_SearchPage = buildSearchParamFilter({}, {
 });
 
 // We must use on filter per type of page.
-myWebSite.onGET("/**", req => {
+myWebSite.onGET("/**", async req => {
     const urlBefore = req.urlInfos.toString();
     req.filterSearchParams(searchFilter_HomePage);
     return req.htmlResponse(`Url before: ${urlBefore}<br/>Url after: ${req.urlInfos.toString()}<br/>`);
 });
 
 // Add an exception for our search page.
-myWebSite.onGET("/search", req => {
+myWebSite.onGET("/search", async req => {
     const urlBefore = req.urlInfos.toString();
     req.filterSearchParams(searchFilter_SearchPage);
     return req.htmlResponse(`Url before: ${urlBefore}<br/>Url after: ${req.urlInfos.toString()}<br/>`);

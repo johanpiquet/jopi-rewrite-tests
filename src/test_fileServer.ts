@@ -1,11 +1,11 @@
-import {JopiServer, WebSite} from "jopi-rewrite";
+import {JopiServer, newWebSite} from "jopi-rewrite";
 
 const server = new JopiServer();
-const myWebSite = server.addWebsite(new WebSite("http://127.0.0.1"));
+const myWebSite = server.addWebsite(newWebSite("http://127.0.0.1"));
 server.startServer();
 
 //http://127.0.0.1/index.html
-myWebSite.onGET("/**", req => {
+myWebSite.onGET("/**", async req => {
     return req.serveFile("./my-static-website", {
         // Will replace "/index.html" in the browser navbar by "/".
         replaceIndexHtml: true,

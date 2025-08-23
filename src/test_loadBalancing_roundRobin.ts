@@ -1,11 +1,11 @@
-import {JopiServer, ServerFetch, WebSite} from "jopi-rewrite";
+import {JopiServer, newWebSite, ServerFetch} from "jopi-rewrite";
 
 const targetUrl = "https://developer.mozilla.org";
 
 const server = new JopiServer();
 const sslCertificate = await server.createDevCertificate(new URL(targetUrl).hostname);
 
-const myWebSite = new WebSite(targetUrl, {certificate: sslCertificate});
+const myWebSite = newWebSite(targetUrl, {certificate: sslCertificate});
 
 function buildServer(offset: number) {
     return ServerFetch.useOrigin("https://34.111.97.67", "developer.mozilla.org", {

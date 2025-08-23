@@ -1,7 +1,7 @@
-import {JopiServer, NotAuthorizedException, WebSite} from "jopi-rewrite";
+import {JopiServer, NotAuthorizedException, newWebSite} from "jopi-rewrite";
 
 const server = new JopiServer();
-const myWebSite = server.addWebsite(new WebSite("http://127.0.0.1"));
+const myWebSite = server.addWebsite(newWebSite("http://127.0.0.1"));
 server.startServer();
 
 // We must set a secret key, which will allows encoding our JWT token.
@@ -30,7 +30,7 @@ myWebSite.setAuthHandler<UserLoginPassword>(loginInfo => {
     return {isOk: true, userInfos: foundUser.infos};
 });
 
-myWebSite.onGET("/check-roles", req => {
+myWebSite.onGET("/check-roles", async req => {
     // If the user has not this role, then throw
     // an error NotAuthorizedException, which will
     // return a response with code 401.
@@ -49,7 +49,7 @@ myWebSite.onGET("/check-roles", req => {
 });
 
 // Our home page returns information about the user.
-myWebSite.onGET("/", req => {
+myWebSite.onGET("/", async req => {
     //This will automatically check and decode our JWT token.
     //highlight-next-line
     let infos = req.getUserInfos();

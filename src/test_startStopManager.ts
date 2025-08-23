@@ -1,4 +1,4 @@
-import {JopiServer, ServerFetch, AutomaticStartStop, WebSite} from "jopi-rewrite";
+import {JopiServer, ServerFetch, AutomaticStartStop, newWebSite} from "jopi-rewrite";
 
 /**
  * Will allow starting a PHP server expose inside a docker
@@ -34,7 +34,7 @@ const startStop = new AutomaticStartStop({
 
 const server = new JopiServer();
 const certificate = await server.createDevCertificate("127.0.0.1");
-const myWebSite = new WebSite("https://127.0.0.1", {certificate});
+const myWebSite = newWebSite("https://127.0.0.1", {certificate});
 
 myWebSite.addSourceServer(ServerFetch.useOrigin("http://127.0.0.1:8080", undefined, {
     // Is called before each request.
