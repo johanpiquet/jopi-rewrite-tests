@@ -16,7 +16,8 @@
     "start-node": "jopin dist/tests.js",
     "start-bun": "jopib src/tests.ts",
 
-    "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts"
+    "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
+    "start-bun-nopreload": "bun src/tests.ts"
   },
 
   "devDependencies": {
