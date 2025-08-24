@@ -39,5 +39,7 @@
   },
 
   "nodeSwitch": true,
-  "nodeSwitch-default": "node"
+  "nodeSwitch-default": "node",
+
+  "watch": true
 }

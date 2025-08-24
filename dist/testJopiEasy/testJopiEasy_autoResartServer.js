@@ -1,21 +1,9 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { jopiApp } from "jopi-rewrite";
 import WelcomeComponent from "./WelcomeComponent.js";
-// We enable the auto-restart.
-// It watches all our sources change and hard-restarts the app if a change is detected.
-//
-jopiApp.if_devMode(true /* <-- true allows setting dev mode from here */)
-    // File watching is automatically enabled if dev mode.
-    //.disable_restartServerOnSourceChange()
-    // Browser refresh is automatically enabled if dev mode.
-    //.disable_refreshBrowserOnSourceChange()
-    // If using TypeScript compiler, then the source dir will be auto-detected.
-    // Here it allows adding the workspace.
-    //
-    .add_directoryToWatch("../../../")
-    .set_restartDelay(1500, true);
-// Isolating our app allows keeping it minimal if watching is enabled.
-// (it will also allow spawning the process in future versions).
+// Dev mode is already the default value.
+jopiApp.set_devMode(true);
+// Isolating our app allows registering start/stop listeners and actions.
 //
 jopiApp.startApp(jopiEasy => {
     jopiEasy.new_webSite("https://127.0.0.1:3000")
