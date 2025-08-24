@@ -13,7 +13,7 @@
   "type": "module",
 
   "scripts": {
-    "tscgo": "npx tsgo",
+    "build": "npx tsgo",
     "tsc": "npx tsc",
 
     "start-node": "jopin dist/tests.js",
