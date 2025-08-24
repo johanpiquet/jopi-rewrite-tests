@@ -13,6 +13,7 @@
   "type": "module",
 
   "scripts": {
+    "tsc": "tsc",
     "start-node": "jopin dist/tests.js",
     "start-bun": "jopib src/tests.ts",
 

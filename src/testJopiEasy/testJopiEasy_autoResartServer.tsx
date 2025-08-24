@@ -1,9 +1,6 @@
 import {jopiApp} from "jopi-rewrite";
 import WelcomeComponent from "./WelcomeComponent.tsx";
 
-// Dev mode is already the default value.
-jopiApp.set_devMode(true);
-
 // Isolating our app allows registering start/stop listeners and actions.
 //
 jopiApp.startApp(jopiEasy => {
