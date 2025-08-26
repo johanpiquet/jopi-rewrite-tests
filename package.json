@@ -1,6 +1,6 @@
 {
   "name": "jopi-rewrite-test",
-  "version": "1.0.0",
+  "version": "2.0.0-next.7",
   "private": "true",
 
   "engines": {
@@ -19,8 +19,8 @@
     "start-node": "jopin dist/tests.js",
     "start-bun": "jopib src/tests.ts",
 
-    "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
-    "start-bun-nopreload": "bun src/tests.ts"
+    "start-node-manual": "bun --import jopi-loader dist/tests.js",
+    "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts"
   },
 
   "devDependencies": {
