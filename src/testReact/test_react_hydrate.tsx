@@ -10,7 +10,7 @@ server.startServer();
 
 myWebSite.onGET("/", async req => {
     if (req.urlInfos.pathname==="/favicon.ico") {
-        return req.error404Response();
+        return req.returnError404_NotFound();
     }
 
     let cp = <ComponentA name="jopi" />;
