@@ -52,6 +52,8 @@
 //import "./testJopiEasy/testJopiEasy_reverseProxy.ts";
 //import "./testJopiEasy/testJopiEasy_webSocket.tsx";
 
-import "./testJopiEasy/testJopiEasy_autoResartServer.tsx";
+//import "./testJopiEasy/testJopiEasy_autoResartServer.tsx";
 
 //endregion
+
+import "./testBug.tsx";
