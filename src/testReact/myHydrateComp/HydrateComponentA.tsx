@@ -9,18 +9,12 @@ const Component = function({name}: {name: string}) {
         alert("click !");
     }
 
-    let text = "Hello " + name;
+    let text = name;
     if (isServerSide()) text += " (server side)";
     else text += " (browser side)";
 
-    return <div className="ComponentA" onClick={doClick}>
-        <div className="welcome">{text}</div>
-    </div>;
+    return <div className="ComponentA" onClick={doClick}>{text}</div>;
 };
 
-// Allow the magic comes from mustHydrate.
-// It creates an island inside the server side rendered HTML
-// where the HTML output of our React component is automatically
-// replaced by the full functional React component.
-//
+// Note the 'mustHydrate' call here!
 export default mustHydrate(import.meta, Component);

@@ -1,11 +1,3 @@
-//region Cache
-
-//import "./test_cache_inMemoryCache";
-//import "./test_cache_simpleFileCache";
-//import "./test_cache_webSiteMirrorCache";
-
-//endregion
-
 //region React
 
 //import "./testReact/test_react_hydrate.tsx";

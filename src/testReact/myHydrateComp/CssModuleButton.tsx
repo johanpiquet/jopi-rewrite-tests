@@ -18,5 +18,5 @@ function Component({name}: {name: string}) {
     </div>;
 }
 
-// Here we add "styles" which allow automatically inclide the CSS module in the page header as inline CSS.
+// Here we add "styles" which allow automatically include the CSS module in the page header as inline CSS.
 export default mustHydrate(import.meta, Component, styles);

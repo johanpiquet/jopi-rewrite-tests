@@ -16,8 +16,8 @@
     "build": "npx tsgo",
     "tsc": "npx tsc",
 
-    "start-node": "jopin dist/tests.js",
-    "start-bun": "jopib src/tests.ts",
+    "devNode": "jopin dist/tests.js",
+    "devBun": "jopib --hot src/tests.ts",
 
     "start-node-manual": "bun --import jopi-loader dist/tests.js",
     "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
