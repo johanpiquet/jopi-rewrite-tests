@@ -32,7 +32,7 @@ jopiApp.startApp(async jopiEasy => {
             }
         })
 
-        .setFilter_canProcessUrl((url, isResource) => {
+        .setFilter_canProcessThisUrl((url, isResource) => {
             return isResource || !url.startsWith("forbidden/");
         })
 
