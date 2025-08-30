@@ -1,16 +1,10 @@
-import {buildSearchParamFilter, jopiApp} from "jopi-rewrite";
-
-const searchFilter_HomePage = buildSearchParamFilter({}, {
-    hello: {values: ["world", "jopi"]}
-});
+import {jopiApp} from "jopi-rewrite";
 
 jopiApp.startApp(jopiEasy => {
     jopiEasy.new_webSite("http://127.0.0.1")
-        .add_path("/")
-        .onGET(async req => {
-            // Will filter and order params.
-            req.filterSearchParams();
-            return req.htmlResponse("hello")
-        })
-        .add_searchParamFiler(searchFilter_HomePage)
+        .add_middleware()
+            .use_cors()
+        .END_add_middleware()
+        .add_path("/search")
+        .onGET(async req => req.htmlResponse(req.urlInfos.href))
 });
