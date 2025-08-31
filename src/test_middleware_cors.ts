@@ -1,6 +1,6 @@
-import {JopiServer, newWebSite} from "jopi-rewrite";
+import {getServer, newWebSite} from "jopi-rewrite";
 
-const server = new JopiServer();
+const server = getServer();
 const myWebSite = server.addWebsite(newWebSite("http://127.0.0.1"));
 server.startServer();
 
