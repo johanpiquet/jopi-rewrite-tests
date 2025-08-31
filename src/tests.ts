@@ -50,8 +50,8 @@
 
 //region Crawler
 
-import "./testCrawler/test_download.ts";
+//import "./testCrawler/test_download.ts";
 
 //endregion
 
-//import "./testBug.tsx";
+import "./testBug.tsx";
