@@ -22,7 +22,9 @@
     "start-node-manual": "bun --import jopi-loader dist/tests.js",
     "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
 
-    "untrack": "git rm -r --cached -- ./dist/**;"
+    "untrack": "git rm -r --cached -- ./dist/**;",
+
+    "jopiWatch": "tsc --watch"
   },
 
   "devDependencies": {
