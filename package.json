@@ -49,6 +49,7 @@
   "watch": true,
 
   "jopi": {
-    "webSiteUrl": "http://127.0.0.1:3000"
+    "webSiteUrl": "http://127.0.0.1:3000",
+    "inlineMaxSize_ko": 30
   }
 }
