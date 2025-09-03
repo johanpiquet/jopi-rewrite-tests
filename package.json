@@ -31,9 +31,9 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
 
-    "jopi-loader": "workspace:^1.0.20",
-    "@jopi-loader/types": "workspace:^1.0.7",
-    "jopi-node-space": "workspace:^0.0.15"
+    "jopi-loader": "workspace:^1.0.21",
+    "@jopi-loader/types": "workspace:^1.0.8",
+    "jopi-node-space": "workspace:^0.0.16"
   },
 
   "dependencies": {
