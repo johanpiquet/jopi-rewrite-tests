@@ -15,10 +15,10 @@
     "build": "npx tsc",
     "tsc": "npx tsc",
 
-    "devNode": "jopin dist/tests.js",
-    "devBun": "jopib --hot src/tests.ts",
+    "devNode": "npx jopin dist/tests.js",
+    "devBun": "bunx jopib --hot src/tests.ts",
 
-    "start-node-manual": "bun --import jopi-loader dist/tests.js",
+    "start-node-manual": "bun --import jopi-loader --import jopi-rewrite dist/tests.js",
     "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
 
     "untrack": "git rm -r --cached -- ./dist/**;",
@@ -31,15 +31,15 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
 
-    "jopi-loader": "workspace:^1.0.21",
-    "@jopi-loader/types": "workspace:^1.0.8",
-    "jopi-node-space": "workspace:^0.0.16"
+    "jopi-loader": "workspace:^1.0.22",
+    "@jopi-loader/types": "workspace:^1.0.9",
+    "jopi-node-space": "workspace:^0.0.17"
   },
 
   "dependencies": {
     "axios": "^1.11.0",
-    "jopi-rewrite": "workspace:^2.0.1",
-    "jopi-rewrite-ui": "workspace:^2.0.1",
+    "jopi-rewrite": "workspace:^2.0.19",
+    "jopi-rewrite-ui": "workspace:^2.0.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
@@ -51,6 +51,6 @@
 
   "jopi": {
     "webSiteUrl": "http://127.0.0.1:3000",
-    "inlineMaxSize_ko": 30
+    "inlineMaxSize_ko": 10
   }
 }
