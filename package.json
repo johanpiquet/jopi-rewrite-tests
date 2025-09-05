@@ -31,15 +31,15 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
 
-    "jopi-loader": "workspace:^1.0.22",
-    "@jopi-loader/types": "workspace:^1.0.9",
-    "jopi-node-space": "workspace:^0.0.17"
+    "jopi-loader": "workspace:^1.0.26",
+    "@jopi-loader/types": "workspace:^1.0.12",
+    "jopi-node-space": "workspace:^0.0.20"
   },
 
   "dependencies": {
     "axios": "^1.11.0",
-    "jopi-rewrite": "workspace:^2.0.19",
-    "jopi-rewrite-ui": "workspace:^2.0.2",
+    "jopi-rewrite": "workspace:^2.0.23",
+    "jopi-rewrite-ui": "workspace:^2.0.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
