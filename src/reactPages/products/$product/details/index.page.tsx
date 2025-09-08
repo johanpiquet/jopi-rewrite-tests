@@ -9,6 +9,6 @@ export default function() {
     }
 
     return <div>
-        Details/2 page for {params.product}
+        Details page for {params.product}
     </div>;
 }
