@@ -18,12 +18,8 @@
     "devNode": "npx jopin dist/tests.js",
     "devBun": "bunx jopib --hot src/tests.ts",
 
-    "start-node-manual": "bun --import jopi-loader --import jopi-rewrite dist/tests.js",
-    "start-bun-manual": "bun --preload jopi-loader --preload jopi-rewrite src/tests.ts",
-
-    "untrack": "git rm -r --cached -- ./dist/**;",
-
-    "__jopiWatch": "tsc --watch"
+    "start-node-manual": "npx jopin dist/tests.js",
+    "start-bun-manual": "npx jopib src/tests.ts"
   },
 
   "devDependencies": {
@@ -31,23 +27,17 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
 
-    "jopi-loader": "workspace:^1.0.26",
-    "@jopi-loader/types": "workspace:^1.0.12",
-    "jopi-node-space": "workspace:^0.0.20"
+    "jopi-loader": "^1.0.26",
+    "@jopi-loader/types": "^1.0.12",
+    "jopi-node-space": "^0.0.20"
   },
 
   "dependencies": {
-    "axios": "^1.11.0",
     "jopi-rewrite": "workspace:^2.0.23",
     "jopi-rewrite-ui": "workspace:^2.0.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
-
-  "nodeSwitch": true,
-  "nodeSwitch-default": "node",
-
-  "watch": true,
 
   "jopi": {
     "webSiteUrl": "http://127.0.0.1:3000",
