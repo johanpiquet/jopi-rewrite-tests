@@ -4,10 +4,10 @@ export default function() {
     let params = usePageParams();
 
     if (isServerSide()) {
-        console.log("Details: server side render", params);
+        console.log("Details: server side render", params.product);
     }
 
     return <div>
-        Details page for {params.product}
+        Details page for {JSON.stringify(params.product)}
     </div>;
 }

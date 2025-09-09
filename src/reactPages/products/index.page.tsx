@@ -8,7 +8,7 @@ export default function() {
 
     return <div>
         <div>Listing page</div>
-        <div><Link to="./productA/details">Product A</Link></div>
-        <div><Link to="./productB/details">Product B</Link></div>
+        <div><Link to="productA/details">Product A</Link></div>
+        <div><Link to="productB/details">Product B</Link></div>
     </div>;
 }
