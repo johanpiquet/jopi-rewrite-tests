@@ -1,8 +1,7 @@
-import {isServerSide} from "jopi-rewrite-ui";
-import { useParams } from "react-router";
+import {isServerSide, usePageParams} from "jopi-rewrite-ui";
 
 export default function() {
-    let params = useParams();
+    let params = usePageParams();
 
     if (isServerSide()) {
         console.log("Details: server side render", params);
