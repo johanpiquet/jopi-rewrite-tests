@@ -13,6 +13,7 @@
 
   "scripts": {
     "build": "rm -rf ./dist; npx tsc",
+
     "tsc": "npx tsc",
 
     "devNode": "npx jopin dist/tests.js",
