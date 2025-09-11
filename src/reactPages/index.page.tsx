@@ -1,4 +1,4 @@
-import {isBrowserSide, useExecuteOnce, usePage} from "jopi-rewrite-ui";
+import {isBrowserSide, useExecuteOnce, useUserInfos, usePage} from "jopi-rewrite-ui";
 import {Link} from "react-router";
 import React from "react";
 
@@ -7,10 +7,12 @@ const text = isBrowserSide() ? "Browser side component" : "Server side component
 export default function() {
     const page = usePage();
 
+    const userInfos = useUserInfos();
+
     useExecuteOnce(() => {
         console.log("executing (useExecuteOnce)");
         page.addToHeader("link1", <link key="1" href="style2222.css" rel="stylesheet"/>)
-    });
+    }, import.meta.filename);
 
     return <div>
         <div>{text}</div>
