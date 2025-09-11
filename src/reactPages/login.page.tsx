@@ -1,7 +1,12 @@
 import React, {useState} from "react";
-import {type UiUserInfos, useCookie, useUserInfos} from "jopi-rewrite-ui";
+import {type UiUserInfos, useCookie, logOutUser, useUserInfos} from "jopi-rewrite-ui";
 
 export default function() {
+    const doLogOut = () => {
+        logOutUser();
+        setInfos(undefined);
+    };
+
     const doSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -25,8 +30,18 @@ export default function() {
         }
     };
 
-    const [infos, setInfos] = useState<UiUserInfos|undefined>();
-    let isAlreadyLoggedMsg = infos ? "You are already logged as: " + infos.fullName : "";
+    const [infos, setInfos] = useState<UiUserInfos|undefined>(() => useUserInfos());
+debugger;
+    if (infos) {
+        return <div className="w-full flex flex-col items-center justify-center mt-20">
+            <div>You are already logged as: {infos.fullName}</div>
+            <div onClick={doLogOut}
+                className="mt-8 w-full h-11 rounded-full text-white bg-indigo-500 hover:opacity-90 transition-opacity
+                flex items-center justify-center cursor-pointer">
+                Logout
+            </div>
+        </div>;
+    }
 
     return (
         <div className="w-full flex flex-col items-center justify-center mt-20">
@@ -34,13 +49,9 @@ export default function() {
                 className="md:w-96 w-80 flex flex-col items-center justify-center">
                 <h2 className="text-4xl text-gray-900 font-medium">Sign in</h2>
                 <p className="text-sm text-gray-500/90 mt-3">Welcome back! Please sign in to continue</p>
+                <div className="mt-20"></div>
 
-                <div className="mt-10"></div>
-                {isAlreadyLoggedMsg}
-                <div className="mt-10"></div>
-
-                <div
-                    className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
+                <div className="flex items-center w-full bg-transparent border border-gray-300/60 h-12 rounded-full overflow-hidden pl-6 gap-2">
                     <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M0 .55.571 0H15.43l.57.55v9.9l-.571.55H.57L0 10.45zm1.143 1.138V9.9h13.714V1.69l-6.503 4.8h-.697zM13.749 1.1H2.25L8 5.356z" fill="#6B7280"/>
                     </svg>
