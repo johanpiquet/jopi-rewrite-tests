@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {type UiUserInfos, useCookie, logOutUser, useUserInfos} from "jopi-rewrite-ui";
+import {type UiUserInfos, logOutUser, useUserInfos, useFormSubmit} from "jopi-rewrite-ui";
 
 export default function() {
     const doLogOut = () => {
@@ -7,31 +7,13 @@ export default function() {
         setInfos(undefined);
     };
 
-    const doSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.currentTarget);
-
-        try {
-            const response = await fetch(window.location.href, {
-                method: 'POST',
-                body: formData,
-                credentials: 'include'
-            });
-
-            if (response.ok) {
-                const infos = useUserInfos();
-                setInfos(infos);
-            } else {
-                console.error("Can't submit form");
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-        }
-    };
-
     const [infos, setInfos] = useState<UiUserInfos|undefined>(() => useUserInfos());
-debugger;
+
+    const [submitForm, _] = useFormSubmit(() => {
+        const infos = useUserInfos();
+        setInfos(infos);
+    });
+
     if (infos) {
         return <div className="w-full flex flex-col items-center justify-center mt-20">
             <div>You are already logged as: {infos.fullName}</div>
@@ -45,7 +27,7 @@ debugger;
 
     return (
         <div className="w-full flex flex-col items-center justify-center mt-20">
-            <form onSubmit={doSubmit} 
+            <form onSubmit={(e) => submitForm(e)}
                 className="md:w-96 w-80 flex flex-col items-center justify-center">
                 <h2 className="text-4xl text-gray-900 font-medium">Sign in</h2>
                 <p className="text-sm text-gray-500/90 mt-3">Welcome back! Please sign in to continue</p>
