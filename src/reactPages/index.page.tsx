@@ -11,6 +11,7 @@ export default function() {
 
     useExecuteOnce(() => {
         console.log("executing (useExecuteOnce)");
+        page.setPageTitle("My page title");
         page.addToHeader("link1", <link key="1" href="my-custom-style.css" rel="stylesheet"/>)
     }, import.meta.filename);
 

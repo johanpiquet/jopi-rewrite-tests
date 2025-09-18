@@ -54,7 +54,7 @@
 
 //endregion
 
-import "./test_reactPages.ts";
+//import "./test_reactPages.ts";
 
-//import "./testBug.tsx";
+import "./testBug.tsx";
 
