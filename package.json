@@ -28,14 +28,14 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
 
-    "jopi-loader": "workspace:^1.0.27",
-    "@jopi-loader/types": "workspace:^1.0.12",
-    "jopi-node-space": "workspace:^0.0.20"
+    "jopi-loader": "workspace:^1.0.28",
+    "@jopi-loader/types": "workspace:^1.0.13",
+    "jopi-node-space": "workspace:^0.0.21"
   },
 
   "dependencies": {
-    "jopi-rewrite": "workspace:^2.0.23",
-    "jopi-rewrite-ui": "workspace:^2.0.6",
+    "jopi-rewrite": "workspace:^2.0.25",
+    "jopi-rewrite-ui": "workspace:^2.0.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
