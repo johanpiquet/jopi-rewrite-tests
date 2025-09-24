@@ -1,6 +1,6 @@
-import {type LoginPassword, getRouteContext} from "jopi-rewrite";
+import {type LoginPassword, getRouteServerContext} from "jopi-rewrite";
 
-let ctx = getRouteContext();
+let ctx = getRouteServerContext();
 
 ctx.onGET(async (req, next) => {
     console.log("login.server.tsx is catching")

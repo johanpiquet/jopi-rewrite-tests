@@ -1,6 +1,6 @@
-import {getRouteContext} from "jopi-rewrite";
+import {getRouteServerContext} from "jopi-rewrite";
 
-let ctx = getRouteContext();
+let ctx = getRouteServerContext();
 
 ctx.onPOST(async req => {
     // Get the data send to the server.
