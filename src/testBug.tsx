@@ -1,26 +1,24 @@
-import React from "react";
-import {useFormSubmit} from "jopi-rewrite-ui";
+import {jopiApp} from "jopi-rewrite";
 
-export default function() {
-    // A function which will be called once the webservice returns.
-    function onFormSubmitCallback(returnedData: any) {
-        console.log("Returned data", returnedData);
-    }
+jopiApp.startApp(jopiEasy => {
+    jopiEasy.new_webSite("http://127.0.0.1")
+        //.enable_reactRouter(import.meta)
 
-    // Here we get a 'submitForm' which will be used to submit our form.
-    //
-    // The second value is 'returnedData' which be automatically
-    // updated with the returned value (through a state, doing that it's persistent).
-    //
-    const [submitForm, returnedData] = useFormSubmit(onFormSubmitCallback);
+        .enable_automaticCache()
+        .use_memoryCache()
+        .END_use_AutomaticCache()
 
-    return (
-        <div>
-            <form onSubmit={(e) => submitForm(e)}>
-                <input name="fieldA" />
-                <input name="fieldB" />
-                <div>returnedData: {JSON.stringify(returnedData)}</div>
-            </form>
-        </div>
-    );
-};
+        // Can mix router and manually defined path
+        // because ReactRouter will send a 404, since
+        // only the Page Router declared correctly.
+        //
+        .add_path("/time")
+
+        .use({
+            onGET: async req => {
+                return req.reactResponse(<div>Date: {new Date().toDateString()}</div>)
+            },
+
+            // enableAutoCache: false
+        })
+});
