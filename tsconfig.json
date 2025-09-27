@@ -23,7 +23,13 @@
     "allowJs": false,
 
     "allowSyntheticDefaultImports": true,
-    "types": ["@jopi-loader/types", "@types/bun"]
+    "types": ["@jopi-loader/types", "@types/bun"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/shadcn/*"],
+      "@/components/*": ["./src/shadcn/components/*"]
+    }
   },
 
   "include": [
