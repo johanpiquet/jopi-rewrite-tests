@@ -1,6 +1,6 @@
 import {jopiApp} from "jopi-rewrite";
 
-jopiApp.startApp(jopiEasy => {
+jopiApp.startApp(import.meta, jopiEasy => {
 // To know:
 // - Certificat is automatically renewed (every 80 days).
 // - With bun.js, HTTPS certificates can be updated without restarting the server.

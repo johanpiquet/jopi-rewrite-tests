@@ -1,6 +1,6 @@
 import {jopiApp, RefFor_WebSite} from "jopi-rewrite";
 
-jopiApp.startApp(async jopiEasy => {
+jopiApp.startApp(import.meta, async jopiEasy => {
     const webSite = new RefFor_WebSite();
 
     // The website to download.

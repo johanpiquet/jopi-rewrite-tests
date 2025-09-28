@@ -1,7 +1,7 @@
 import {jopiApp} from "jopi-rewrite";
 import WebSocketClient from "./WebSocketClient.tsx";
 
-jopiApp.startApp(jopiEasy => {
+jopiApp.startApp(import.meta, jopiEasy => {
     jopiEasy.new_webSite("http://127.0.0.1:3000")
         .add_path("/").onGET(async req => req.reactResponse(<WebSocketClient/>))
         .add_path("/test").onWebSocketConnect((ws, infos) => {

@@ -1,6 +1,6 @@
 import {jopiApp} from "jopi-rewrite";
 
-jopiApp.startApp(jopiEasy => {
+jopiApp.startApp(import.meta, jopiEasy => {
     jopiEasy.new_webSite()
         .add_jwtTokenAuth()
             .step_setPrivateKey("my-private-key")
@@ -15,5 +15,5 @@ jopiApp.startApp(jopiEasy => {
                 .DONE_use_simpleLoginPassword()
             .DONE_setUserStore()
         .DONE_add_jwtTokenAuth()
-        .enable_reactRouter(import.meta);
+        .enable_reactRouter();
 });
