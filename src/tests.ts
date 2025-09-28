@@ -1,3 +1,3 @@
-import "./testRouter.tsx";
-//import "./testBug.tsx";
+//import "./testRouter.tsx";
+import "./testBug.tsx";
 

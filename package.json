@@ -11,10 +11,8 @@
   "scripts": {
     "build": "rm -rf ./dist; npx tsc",
     "tsc": "npx tsc",
-    "devNode": "JOPI_LOG=1 npx jopin --jopi-dev dist/tests.js",
-    "devBun": "bunx jopib --jopi-dev src/tests.ts",
-    "start-node-manual": "npx jopin dist/tests.js",
-    "start-bun-manual": "npx jopib src/tests.ts"
+    "devNodeTest": "JOPI_LOG=0 npx jopin --jopi-dev dist/tests.js",
+    "devBunTest": "bunx jopib --jopi-dev src/tests.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.2.20",

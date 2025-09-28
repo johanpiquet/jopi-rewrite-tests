@@ -26,10 +26,12 @@
     "types": ["@jopi-loader/types", "@types/bun"],
 
     "baseUrl": ".",
+
     "paths": {
-      "@/*": ["./src/shadcn/*"],
-      "@/lib/*": ["./src/shadcn/lib/*"],
-      "@/components/*": ["./src/shadcn/components/*"]
+      "@/*": ["./src/*"],
+      "@/uiLib/*": ["./src/uiLib/*"],
+      "@/ui/*": ["./src/uiComponents/ui/*"],
+      "@/uiComponents/*": ["./src/uiComponents/*"]
     }
   },
 
