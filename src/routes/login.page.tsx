@@ -1,11 +1,13 @@
 import React, {useState} from "react";
-import {type UiUserInfos, logOutUser, useUserInfos, useFormSubmit} from "jopi-rewrite-ui";
+import {type UiUserInfos, useUserInfos, useFormSubmit, useLogOutUser} from "jopi-rewrite-ui";
 
 export default function() {
     const doLogOut = () => {
         logOutUser();
         setInfos(undefined);
     };
+
+    const logOutUser = useLogOutUser();
 
     const [infos, setInfos] = useState<UiUserInfos|undefined>(() => useUserInfos());
 
