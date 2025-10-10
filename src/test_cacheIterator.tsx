@@ -1,7 +1,7 @@
 import {jopiApp} from "jopi-rewrite";
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.new_webSite("http://127.0.0.1")
+    jopiEasy.new_webSite()
         .enable_automaticCache()
             .use_memoryCache()
             .END_use_AutomaticCache()
