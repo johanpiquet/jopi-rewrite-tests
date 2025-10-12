@@ -1,5 +1,6 @@
 import {isBrowserSide, mustHydrate} from "jopi-rewrite-ui";
 import NodeSpace from "jopi-node-space";
+import * as React from "react"
 
 if (isBrowserSide()) {
     const ws = await NodeSpace.webSocket.openConnection('ws://127.0.0.1:3000/test');
