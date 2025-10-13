@@ -19,16 +19,16 @@
     "@types/bun": "^1.2.20",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "jopi-loader": "workspace:^",
-    "@jopi-loader/types": "workspace:^",
-    "jopi-node-space": "workspace:^"
+    "jopi-loader": "*",
+    "@jopi-loader/types": "*",
+    "jopi-node-space": "*"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "jopi-rewrite": "workspace:^",
-    "jopi-rewrite-ui": "workspace:^",
+    "jopi-rewrite": "*",
+    "jopi-rewrite-ui": "*",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
