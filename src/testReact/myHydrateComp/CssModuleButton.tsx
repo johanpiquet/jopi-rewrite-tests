@@ -1,5 +1,5 @@
 import React from "react";
-import {mustHydrate, isServerSide} from "jopi-rewrite-ui";
+import {mustHydrate, isServerSide} from "jopi-rewrite/ui";
 import myCssFilePath from "./external-css.scss";
 import styles from "./mybutton.module.scss";
 

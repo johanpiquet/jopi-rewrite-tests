@@ -1,6 +1,6 @@
 import React from "react";
 import "./SsrButton.scss"
-import {mustBundleExternalCss} from "jopi-rewrite-ui";
+import {mustBundleExternalCss} from "jopi-rewrite/ui";
 
 // Allow the compiler to automatically include the CSS file in the CSS bundle.
 // To know: CSS found in active files (which are included by an import, like this file)

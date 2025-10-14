@@ -1,4 +1,4 @@
-import {mustHydrate} from "jopi-rewrite-ui";
+import {mustHydrate} from "jopi-rewrite/ui";
 
 const Component = () => {
     return <div>Welcome from React !</div>;

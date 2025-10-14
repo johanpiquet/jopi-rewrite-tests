@@ -1,5 +1,5 @@
 import React from "react";
-import {mustHydrate, isServerSide} from "jopi-rewrite-ui";
+import {mustHydrate, isServerSide} from "jopi-rewrite/ui";
 
 import "./HydrateComponentA.scss";
 

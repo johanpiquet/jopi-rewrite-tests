@@ -1,4 +1,4 @@
-import {isBrowserSide, useExecuteOnce, useUserInfos, usePage} from "jopi-rewrite-ui";
+import {isBrowserSide, useExecuteOnce, useUserInfos, usePage} from "jopi-rewrite/ui";
 import {Link} from "react-router";
 import React from "react";
 
