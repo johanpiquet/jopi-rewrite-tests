@@ -15,7 +15,7 @@
     "devBunTest": "bunx jopib src/tests.ts"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.20",
+    "@types/bun": "latest",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "jopi-loader": "*",
