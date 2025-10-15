@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {type UiUserInfos, useUserInfos, useFormSubmit, useLogOutUser} from "jopi-rewrite/ui";
+import {type UiUserInfos} from "jopi-rewrite/ui";
+import {useUserInfos, useFormSubmit, useLogOutUser} from "jopi-rewrite/uikit";
 
 export default function() {
     const doLogOut = () => {

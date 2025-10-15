@@ -1,8 +1,9 @@
-import {isBrowserSide, useExecuteOnce, useUserInfos, usePage} from "jopi-rewrite/ui";
+import {usePage} from "jopi-rewrite/ui";
+import {isBrowserSide, useExecuteOnce, useUserInfos} from "jopi-rewrite/uikit";
 import {Link} from "react-router";
 import React from "react";
 
-const text = isBrowserSide() ? "Browser side component" : "Server side component";
+const text = isBrowserSide ? "Browser side component" : "Server side component";
 
 export default function() {
     const page = usePage();

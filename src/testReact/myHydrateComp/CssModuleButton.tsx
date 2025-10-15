@@ -13,7 +13,7 @@ function Component({name}: {name: string}) {
     }
 
     let text = "Hello " + name;
-    if (isServerSide()) text += " (server side)";
+    if (isServerSide) text += " (server side)";
     else text += " (browser side)";
 
     return <div className={styles.myLocalStyle} onClick={doClick}>
