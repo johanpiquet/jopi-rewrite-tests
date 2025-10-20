@@ -1,15 +1,15 @@
 import {isBrowserSide, mustHydrate} from "jopi-rewrite/ui";
 import * as React from "react"
-import * as ns_webSocket from "jopi-toolkit/ns_webSocket";
+import * as jk_webSocket from "jopi-toolkit/jk_webSocket";
 
 if (isBrowserSide) {
-    const ws = await ns_webSocket.openConnection('ws://127.0.0.1:3000/test');
+    const ws = await jk_webSocket.openConnection('ws://127.0.0.1:3000/test');
 
-    ns_webSocket.onMessage(ws, message => {
+    jk_webSocket.onMessage(ws, message => {
         console.log('Received message from server : ', message);
     });
 
-    ns_webSocket.onClosed(ws, () => {
+    jk_webSocket.onClosed(ws, () => {
         console.log('Connection closed !');
     });
 
