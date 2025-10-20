@@ -19,7 +19,7 @@
     "@types/bun": "latest",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "jopi-node-space": "*"
+    "jopi-toolkit": "*"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

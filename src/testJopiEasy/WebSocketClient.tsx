@@ -1,6 +1,6 @@
 import {isBrowserSide, mustHydrate} from "jopi-rewrite/ui";
 import * as React from "react"
-import * as ns_webSocket from "jopi-node-space/ns_webSocket";
+import * as ns_webSocket from "jopi-toolkit/ns_webSocket";
 
 if (isBrowserSide) {
     const ws = await ns_webSocket.openConnection('ws://127.0.0.1:3000/test');
