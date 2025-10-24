@@ -15,5 +15,4 @@ jopiApp.startApp(import.meta, jopiEasy => {
                 .DONE_use_simpleLoginPassword()
             .DONE_setUserStore()
         .DONE_add_jwtTokenAuth()
-        .enable_automaticRoutes();
 });
