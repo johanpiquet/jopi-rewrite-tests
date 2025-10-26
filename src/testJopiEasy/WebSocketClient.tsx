@@ -1,4 +1,4 @@
-import {isBrowserSide, mustHydrate} from "jopi-rewrite/ui";
+import {isBrowserSide} from "jopi-rewrite/ui";
 import * as React from "react"
 import * as jk_webSocket from "jopi-toolkit/jk_webSocket";
 
@@ -23,4 +23,4 @@ const Component = () => {
     return <div>Web Socket Client</div>;
 };
 
-export default mustHydrate(import.meta, Component);
+export default Component;
