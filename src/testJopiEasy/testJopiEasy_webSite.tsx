@@ -2,7 +2,7 @@ import {jopiApp} from "jopi-rewrite";
 import WelcomeComponent from "./WelcomeComponent.tsx";
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.use_webSite()
+    jopiEasy.create_creatWebSiteServer()
         .add_httpCertificate().generate_localDevCert().DONE_add_httpCertificate()
         .add_path("/")
         //.add_requiredRole("admin")

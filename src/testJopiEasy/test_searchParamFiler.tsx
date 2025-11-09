@@ -11,7 +11,7 @@ const filter_SearchPage = buildSearchParamFilter({}, {
 });
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.use_webSite()
+    jopiEasy.create_creatWebSiteServer()
         .add_path("/search")
         .onGET(async req => {
             // Will filter and order params.

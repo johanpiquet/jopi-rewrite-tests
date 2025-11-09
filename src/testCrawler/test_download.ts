@@ -4,7 +4,7 @@ jopiApp.startApp(import.meta, async jopiEasy => {
     const webSite = new RefFor_WebSite();
 
     // The website to download.
-    jopiEasy.use_webSite("http://127.0.0.1", webSite)
+    jopiEasy.create_creatWebSiteServer("http://127.0.0.1", webSite)
         .add_path_GET("/", async req => {
             console.log("Calling url:", req.url);
             return req.htmlResponse(`
@@ -16,7 +16,7 @@ jopiApp.startApp(import.meta, async jopiEasy => {
     // The website must be fully initialized.
     await webSite.waitWebSiteReady();
 
-    await jopiEasy.use_downloader("http://127.0.0.1")
+    await jopiEasy.create_webSiteDownloader("http://127.0.0.1")
 
         // www-out is already the default, can be omitted.
         .set_outputDir("www-out")
