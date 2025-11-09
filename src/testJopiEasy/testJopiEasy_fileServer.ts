@@ -1,7 +1,7 @@
 import {jopiApp} from "jopi-rewrite";
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.new_fileServer()
+    jopiEasy.use_fileServer()
         .set_rootDir("www")
         .DONE_new_fileServer()
 

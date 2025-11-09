@@ -2,7 +2,7 @@ import {jopiApp} from "jopi-rewrite";
 import WebSocketClient from "./WebSocketClient.tsx";
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.new_webSite()
+    jopiEasy.use_webSite()
         .add_path("/").onGET(async req => req.reactResponse(<WebSocketClient/>))
         .add_path("/test").onWebSocketConnect((ws, infos) => {
         console.log("Connected to WebSocket Client !!!!!");

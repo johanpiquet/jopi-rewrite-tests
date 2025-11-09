@@ -4,7 +4,7 @@ import WelcomeComponent from "./WelcomeComponent.tsx";
 // Isolating our app allows registering start/stop listeners and actions.
 //
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.new_webSite()
+    jopiEasy.use_webSite()
         .add_httpCertificate().generate_localDevCert().DONE_add_httpCertificate()
         .add_path("/")
         //.add_requiredRole("admin")

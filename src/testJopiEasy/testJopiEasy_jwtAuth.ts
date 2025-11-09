@@ -1,7 +1,7 @@
 import {jopiApp} from "jopi-rewrite";
 
 jopiApp.startApp(import.meta, jopiEasy => {
-    jopiEasy.new_webSite()
+    jopiEasy.use_webSite()
         .add_jwtTokenAuth()
 
         .step_setPrivateKey("my-secret-key")
