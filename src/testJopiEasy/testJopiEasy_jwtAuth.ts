@@ -2,7 +2,7 @@ import {jopiApp} from "jopi-rewrite";
 
 jopiApp.startApp(import.meta, jopiEasy => {
     jopiEasy.create_creatWebSiteServer()
-        .add_jwtTokenAuth()
+        .enable_jwtTokenAuth()
 
         .step_setPrivateKey("my-secret-key")
 
@@ -18,7 +18,7 @@ jopiApp.startApp(import.meta, jopiEasy => {
             .set_cookieDuration(4)
             .DONE_stepConfigure()
 
-        .DONE_add_jwtTokenAuth()
+        .DONE_enable_jwtTokenAuth()
 
         .add_path_GET("/", async req => {
             // Will get our user info or leave and
