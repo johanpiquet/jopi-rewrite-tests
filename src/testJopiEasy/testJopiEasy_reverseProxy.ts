@@ -6,7 +6,7 @@ jopiApp.startApp(import.meta, jopiEasy => {
             .add_target()
                 .useIp("http://my-jopi-web-site.jopi:8891", "127.0.0.1")
                 .DONE_add_target()
-        .DONE_new_reverseProxy()
+        .DONE_create_reverseProxy()
 
         .add_httpCertificate()
             .generate_localDevCert()
