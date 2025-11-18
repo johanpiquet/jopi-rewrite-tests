@@ -1,47 +1,61 @@
-import {jopiApp, RefFor_WebSite} from "jopi-rewrite";
+import {WebSiteCrawler} from "jopi-rewrite/crawler";
 
-jopiApp.startApp(import.meta, async jopiEasy => {
-    const webSite = new RefFor_WebSite();
+const outDir = "../../johan-piquet.fr";
+const myLocalWordpressUrl = "https://my-jopi-web-site.jopi:8890";
 
-    // The website to download.
-    jopiEasy.create_creatWebSiteServer("http://127.0.0.1", webSite)
-        .add_path_GET("/", async req => {
-            console.log("Calling url:", req.url);
-            return req.htmlResponse(`
-                <a href="http://127.0.0.1/link1">link 1</a>
-                <a href="http://127.0.0.1/link2">link 2</a>
-            `)
-        });
+async function launchCrawler() {
+    console.log("Initialisation du crawler...");
 
-    // The website must be fully initialized.
-    await webSite.waitWebSiteReady();
+    const crawler = new WebSiteCrawler(myLocalWordpressUrl, {
+        outputDir: outDir,
 
-    await jopiEasy.create_webSiteDownloader("http://127.0.0.1")
+        onUrlProcessed(infos) {
+            console.log("📄", infos.localUrl);
+        },
 
-        // www-out is already the default, can be omitted.
-        .set_outputDir("www-out")
+        transformUrl(url) {
+            if (url === "index.html") return "/";
+            if ((url === "index.html") || url.endsWith("/index.html")) return url.slice(0, -10);
+            return url;
+        },
 
-        // Add url than the crawler can omit.
-        // (occurs with complex CSS or requested by a script)
-        .set_extraUrls(["my-font.ttf"])
+        canIgnoreIfAlreadyCrawled() {
+            return false;
+        },
 
-        .on_urlProcessed(infos => {
-            if (infos.state==="ok") {
-                console.log("Must upload this file to the server:", infos.cacheKey);
-                console.log("Is url:", infos.sourceUrl);
-            }
-        })
+        canDownload(url) {
+            return !url.startsWith("/wp-json/");
+        },
 
-        .setFilter_canProcessThisUrl((url, isResource) => {
-            return isResource || !url.startsWith("forbidden/");
-        })
+        scanThisUrls: [
+            "/wp-content/uploads/2022/04/lottie-home-lottie1.json",
+            "/wp-content/uploads/2022/04/lottie-home-lottie2.json",
+            "/wp-content/uploads/2022/04/lottie-home-lottie3.json",
+            "/wp-content/uploads/2022/04/lottie-body-bg.webp",
 
-        // Will not download if the resource is already in cache.
-        .setOption_ignoreIfAlreadyDownloaded(true)
+            "/wp-content/themes/betheme/fonts/fontawesome/fa-brands-400.woff2",
+            "/wp-content/themes/betheme/fonts/fontawesome/fa-brands-400.woff",
+            "/wp-content/themes/betheme/fonts/fontawesome/fa-brands-400.ttf",
 
-        .setFilter_canIgnoreIfAlreadyDownloaded((url, infos) => {
-            return (url==="blog") || (url.startsWith("blog/"));
-        })
+            // Permet de re-scanner, même si je ne rescanne pas les autres pages.
+            "/blog",
+            "/blog/",
+            // "/docs/Jopi%20Rewrite/Intro"
+        ],
 
-        .START_DOWNLOAD();
-});
+        rewriteThisUrls: [
+            "https://johan-piquet.fr"
+        ]
+    });
+
+    console.log("🚀 Démarrage du crawling...");
+    console.log("Source:", myLocalWordpressUrl);
+    console.log("Destination:", outDir);
+
+    await crawler.start()
+
+    console.log("✅ Crawling terminé avec succès!");
+}
+
+console.log("🎯 Démarrage du script de construction du site web...");
+await launchCrawler()
